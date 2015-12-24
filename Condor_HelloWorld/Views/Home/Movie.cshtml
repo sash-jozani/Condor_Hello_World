@@ -1,0 +1,36 @@
+﻿@model Condor_HelloWorld.Models.MovieViewModel
+
+
+@{
+    ViewBag.Title = "Here is me Movie";
+}
+
+<h2>Movie</h2>
+
+
+<p>
+    ID: @Model.id
+</p>
+
+<p>
+    name: @Model.name
+</p>
+<p>
+    is it cool? @Model.isCool
+</p>
+
+<p>
+    <b>URL Query String:</b> @Request.QueryString[0].ToString()
+</p>
+
+<p>
+    <b>URL Path:</b> @Request.Path
+</p>
+
+<p>
+    <b>Full local path (Physical Path):</b> @Request.PhysicalPath
+</p>
+
+<p>
+    <b>Full URL:</b> @Request.Url
+</p>
