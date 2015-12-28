@@ -23,6 +23,13 @@ namespace Condor_HelloWorld
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
+               "~/Content/bootstrap.css"));
+            bundles.Add(new ScriptBundle("~/script/bootstrap").Include(
+                       "~/Content/bootstrap.js"));
+
+
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/site.css",
                 "~/Content/Styles.css"));

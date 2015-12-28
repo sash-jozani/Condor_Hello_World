@@ -1,0 +1,47 @@
+﻿@model Condor_HelloWorld.Models.PostJobViewModel
+
+@{
+    ViewBag.Title = "PostJob";
+}
+
+<h2>PostJob</h2>
+
+<h3>MVC</h3>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            @Html.TextBoxFor(x => x.id, new { @class="form-control", type="number" })
+            @Html.ValidationMessageFor(x => x.id, "Ho khare .. adad bezan")
+        </div>
+
+        <div class="form-group">
+            @Html.TextBoxFor(x => x.title)
+            @Html.ValidationMessageFor(x => x.title)
+        </div>
+
+        <div class="form-group">
+            @Html.TextBoxFor(x => x.salary)
+        </div>
+
+        <div class="form-group">
+            @Html.TextBoxFor(x => x.AccessLevel)
+        </div>
+        <input type="submit" name="sub" value="Submit kon dadash" />
+    }
+</div>
+
+
+
+
+<h3>Traditional</h3>
+<form action="/" method="post">
+    <input type="text" name="name" value=" " />
+    <select>
+        <option value="value">text</option>
+        <option value="value">text</option>
+        <option value="value">text</option>
+
+    </select>
+</form>

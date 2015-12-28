@@ -3,15 +3,26 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>   
+    <title>@ViewBag.Title</title>
+
+    @Scripts.Render("~/bundles/jquery")
+
+
+    @Styles.Render("~/Content/bootstrap")    
+    @Scripts.Render("~/script/bootstrap")
+    
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/Admin")
+
+
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div>Hello</div>
+
     @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
 </body>
 </html>
