@@ -1,0 +1,62 @@
+﻿@model Condor_HelloWorld.Models.CreateViewModel
+@{
+    ViewBag.Title = "Register now";
+}
+<style>
+    div .form-group {
+        text-align: center !important;
+    }
+
+    .condor_error {
+        margin: 0 auto;
+        font-size: 13px;
+    }
+</style>
+
+<h2 class="text-center">Create your OWN account</h2>
+<br /><br /><br />
+<div class="container">
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        //geting email :
+        <div class="form-group">
+            <p class="panel-title text-center">
+                Please enter your email address :
+            </p>
+
+            @Html.TextBoxFor(x => x.email, new { @class = "form-control text-center", type = "email" })
+            @Html.ValidationMessageFor(x => x.email, "please enter a currect email", new { @class = "condor_error" })
+        </div>
+
+        //geting fullName:
+        <div class="form-group">
+            <p class="panel-title text-center">
+                Please enter your fullname address :
+            </p>
+
+            @Html.TextBoxFor(x => x.fullName, new { @class = "form-control text-center" })
+        </div>
+        //geting password :
+        <div class="form-group">
+            <p class="panel-title text-center">
+                Please enter your Password :
+            </p>
+
+            @Html.TextBoxFor(x => x.password, new { @class = "form-control text-center", type = "password" })
+        </div>
+
+        //geting password confirmation:
+        <div class="form-group">
+            <p class="panel-title text-center">
+                Please enter your Password again :
+            </p>
+            @Html.TextBoxFor(x => x.confirmationPassword, new { @class = "form-control text-center", type = "password" })
+            @Html.ValidationMessageFor(x => x.confirmationPassword, "your passwords are not the same", new { @class = "condor_error" })
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" name="sub" value="Create now" />
+        </div>
+    }
+</div>
+
+

@@ -25,8 +25,8 @@ namespace Condor_HelloWorld.Controllers
 
             HttpCookie cook = new HttpCookie("Coce");
 
-            cook.Value = "This is my cookie: " + id.ToString();
-            cook.Expires = DateTime.Now.AddSeconds(40);
+             cook.Value = "This is my cookie: " + id.ToString();
+            cook.Expires = DateTime.Now.AddDays(11);
 
             Response.Cookies.Add(cook);
 

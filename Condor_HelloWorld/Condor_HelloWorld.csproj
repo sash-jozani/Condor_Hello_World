@@ -130,6 +130,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CreateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobBoardController.cs" />
     <Compile Include="Controllers\WebDevController.cs" />
@@ -137,6 +138,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CondorViewModel.cs" />
+    <Compile Include="Models\CreateViewModel.cs" />
     <Compile Include="Models\MovieViewModel.cs" />
     <Compile Include="Models\PostJobViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -254,6 +256,9 @@
     <Content Include="Views\WebDev\QueryStyle.cshtml" />
     <Content Include="Views\WebDev\SessionStyle.cshtml" />
     <Content Include="Views\JobBoard\PostJob.cshtml" />
+    <Content Include="Views\Create\Index.cshtml" />
+    <Content Include="Views\Create\Create.cshtml" />
+    <Content Include="Views\Create\logIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

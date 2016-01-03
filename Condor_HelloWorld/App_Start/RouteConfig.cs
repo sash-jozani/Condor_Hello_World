@@ -16,7 +16,7 @@ namespace Condor_HelloWorld
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Create", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
