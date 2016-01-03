@@ -48,7 +48,7 @@ namespace Condor_HelloWorld.Controllers
             {
                 ViewBag.cook = "error";
             }
-
+            //return RedirectToAction("Index", "Create");
             return View(model);
         }
 
