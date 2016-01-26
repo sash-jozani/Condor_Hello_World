@@ -55,10 +55,14 @@ namespace Condor_HelloWorld.Controllers
             
             //NameValueCollection qs = Request.QueryString;
             //qs.GetKey(0).Where(x=>x.ToString() == "Item1").Select(m=>m.ToString());
-            
-            
-            ViewBag.Item1 = Request["item1"];
-            ViewBag.Item2 = Request["item2"];
+
+            string key = "123123keykeykir";
+
+
+            ViewBag.Item1 = Request["firstName"];
+            ViewBag.Item2 = Request["lastName"];
+            ViewBag.Item3 = Request["country"];
+
 
 
             ViewBag.meID = id;

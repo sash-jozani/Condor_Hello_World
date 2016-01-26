@@ -16,6 +16,7 @@
 <h2 class="text-center">Create your OWN account</h2>
 <br /><br /><br />
 <div class="container">
+    
     @using (Html.BeginForm(FormMethod.Post))
     {
         //geting email :
@@ -51,7 +52,7 @@
                 Please enter your Password again :
             </p>
             @Html.TextBoxFor(x => x.confirmationPassword, new { @class = "form-control text-center", type = "password" })
-            @Html.ValidationMessageFor(x => x.confirmationPassword, "your passwords are not the same", new { @class = "condor_error" })
+            @Html.ValidationMessageFor(x => x.confirmationPassword,"", new { @class = "condor_error" })
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-primary" name="sub" value="Create now" />

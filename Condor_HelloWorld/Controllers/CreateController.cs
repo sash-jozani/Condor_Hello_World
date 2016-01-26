@@ -26,12 +26,32 @@ namespace Condor_HelloWorld.Controllers
         [HttpPost]
         public ActionResult Create(CreateViewModel createParameter)
         {
-            HttpCookie cook = new HttpCookie("cookiesForCreate");
+            int counter = 0;
+            var cnt = Request.Cookies["counter"] == null ? string.Empty : Request.Cookies["counter"].Value;
+
+            if (!string.IsNullOrEmpty(cnt))
+            {
+                counter = Convert.ToInt32(cnt);
+                HttpCookie cookie = new HttpCookie("counter");
+                cookie.Value = (counter + 1).ToString();
+                cookie.Expires = DateTime.Now.AddDays(3);
+                Response.Cookies.Add(cookie);
+            }
+            else
+            {
+                HttpCookie cookie = new HttpCookie("counter");
+                cookie.Value = "0";
+                cookie.Expires = DateTime.Now.AddDays(3);
+                Response.Cookies.Add(cookie);
+            }
+
+            HttpCookie cook = new HttpCookie("cookiesForCreate_" + counter.ToString());
             cook.Value = "email:" + createParameter.email + "#name:" + createParameter.fullName + "#password:" + createParameter.password;
             cook.Expires = DateTime.Now.AddDays(3);
             Response.Cookies.Add(cook);
             return View();
         }
+
         public ActionResult logIn()
         {
             CreateViewModel model = new CreateViewModel();
@@ -50,6 +70,21 @@ namespace Condor_HelloWorld.Controllers
             }
             //return RedirectToAction("Index", "Create");
             return View(model);
+        }
+        [HttpPost]
+        public ActionResult logIn() 
+        {
+            // Check user pass
+            // return View();
+
+            return RedirectToAction("Profile");
+
+
+        }
+
+        public ActionResult Profile() 
+        {
+            return View();
         }
 
 

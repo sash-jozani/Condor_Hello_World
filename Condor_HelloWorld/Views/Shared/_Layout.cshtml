@@ -5,22 +5,21 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
 
+    <link href="/content/Admin.css" rel="stylesheet" />
+
+
     @Scripts.Render("~/bundles/jquery")
-
-
     @Styles.Render("~/Content/bootstrap")    
-    @Scripts.Render("~/script/bootstrap")
-    
+    @Scripts.Render("~/script/bootstrap")    
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/Admin")
-
-
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div>Hello</div>
-
-    @RenderBody()
+    <div>Menu</div>
+    <div class="container">
+        @RenderBody()
+    </div>
 
     @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)

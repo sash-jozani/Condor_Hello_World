@@ -6,12 +6,15 @@
 
 <h2>PostJob</h2>
 
-<h3>MVC</h3>
+<h3>Salary: @Model.salary</h3>
+<h3>ID: @Model.id</h3>
+
 
 <div>
     @using (Html.BeginForm())
     {
-        <div class="form-group">
+        <div class="form-group">            
+            
             @Html.TextBoxFor(x => x.id, new { @class="form-control", type="number" })
             @Html.ValidationMessageFor(x => x.id, "Ho khare .. adad bezan")
         </div>
@@ -28,7 +31,7 @@
         <div class="form-group">
             @Html.TextBoxFor(x => x.AccessLevel)
         </div>
-        <input type="submit" name="sub" value="Submit kon dadash" />
+        <input type="submit" name="sub" value="Submit kon dadash" class="btn btn-default"  />
     }
 </div>
 

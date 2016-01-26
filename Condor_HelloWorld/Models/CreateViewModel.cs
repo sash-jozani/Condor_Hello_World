@@ -17,7 +17,7 @@ namespace Condor_HelloWorld.Models
         [Required]
         public string password { get; set; }
         [Required]
-        [Compare("password")]
+        [Compare("password",ErrorMessage="Yo! the pass is wrong")]
         public string confirmationPassword { get; set; }
         
     }
