@@ -31,7 +31,7 @@ namespace Condor_HelloWorld.Controllers
 
             if (!string.IsNullOrEmpty(cnt))
             {
-                counter = Convert.ToInt32(cnt);
+                counter =  Convert.ToInt32(cnt);
                 HttpCookie cookie = new HttpCookie("counter");
                 cookie.Value = (counter + 1).ToString();
                 cookie.Expires = DateTime.Now.AddDays(3);
