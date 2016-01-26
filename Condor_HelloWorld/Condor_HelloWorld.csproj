@@ -259,6 +259,7 @@
     <Content Include="Views\Create\Index.cshtml" />
     <Content Include="Views\Create\Create.cshtml" />
     <Content Include="Views\Create\logIn.cshtml" />
+    <Content Include="Views\Create\sucess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,18 +1,45 @@
 ﻿@model Condor_HelloWorld.Models.CreateViewModel
 @{
-    ViewBag.Title = "logIn";
+    ViewBag.Title = "log In";
 }
 
 <h2>logIn</h2>
 <div>
-    @if (ViewBag.cook != "nope")
+    @if (ViewBag.cook != "error")
     {
-        //stop right here
+        using (Html.BeginForm(FormMethod.Post))
+        {
+            if (ViewBag.wrong == "true")
+            {
+                <h3 style="color:red">email or password is wrong</h3>
+            }
+            <div class="form-group">
+                <p class="panel-title text-center">
+                    Please enter your email address :
+                </p>
+
+                @Html.TextBoxFor(x => x.email, new { @class = "form-control text-center", type = "email" })
+                @Html.ValidationMessageFor(x => x.email, "please enter a currect email", new { @class = "condor_error" })
+                
+            </div>
+            <div class="form-group">
+                <p class="panel-title text-center">
+                    Please enter your Password :
+                </p>
+
+                @Html.TextBoxFor(x => x.password, new { @class = "form-control text-center", type = "password" })
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" name="sub" value="login" />
+            </div>
+        }
     }
     else
     {
         <h3>you're not registred yet!!!</h3>
+        <a href="@Url.Action("Create", "Create")">Register now</a>
     }
 
-    
+
 </div>
