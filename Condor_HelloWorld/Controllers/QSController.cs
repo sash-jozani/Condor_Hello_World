@@ -19,10 +19,11 @@ namespace Condor_HelloWorld.Controllers
             return View(model);
         }
         [HttpPost]
-        public ActionResult Index(QSViewModel model)
+        public ActionResult searching(QSViewModel model)
         {
+            return View();
 
-            return RedirectToAction("searching", new { search = model.shitYouSearched });
+            //return RedirectToAction("searching", new { search = model.shitYouSearched });
         }
         public ActionResult searching()
         {

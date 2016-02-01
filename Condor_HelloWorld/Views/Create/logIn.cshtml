@@ -6,11 +6,13 @@
 <h2>logIn</h2>
 <div>
     @if (ViewBag.cook != "error")
+{
+    using (Html.BeginForm(FormMethod.Post))
     {
-        using (Html.BeginForm(FormMethod.Post))
+        <input type="hidden"  name="ipAddress" value="@Request.UserHostAddress" />
+
+        if (ViewBag.wrong == "true")
         {
-            if (ViewBag.wrong == "true")
-            {
                 <h3 style="color:red">email or password is wrong</h3>
             }
             <div class="form-group">

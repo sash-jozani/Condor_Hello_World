@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -130,16 +132,40 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CreateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobBoardController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\QSController.cs" />
     <Compile Include="Controllers\WebDevController.cs" />
+    <Compile Include="DataModels\CondorDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CondorDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\CondorDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CondorDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\CondorDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CondorDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Orders.cs">
+      <DependentUpon>CondorDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Users.cs">
+      <DependentUpon>CondorDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CondorViewModel.cs" />
     <Compile Include="Models\CreateViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\MovieViewModel.cs" />
     <Compile Include="Models\PostJobViewModel.cs" />
     <Compile Include="Models\QSViewModel.cs" />
@@ -217,6 +243,23 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <EntityDeploy Include="DataModels\CondorDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CondorDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataModels\CondorDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CondorDataModel.edmx</DependentUpon>
+      <LastGenOutput>CondorDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataModels\CondorDataModel.edmx.diagram">
+      <DependentUpon>CondorDataModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DataModels\CondorDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CondorDataModel.edmx</DependentUpon>
+      <LastGenOutput>CondorDataModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -237,6 +280,7 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="TextFiles\Entity Framework Steps.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -264,12 +308,18 @@
     <Content Include="Views\Create\sucess.cshtml" />
     <Content Include="Views\QS\Index.cshtml" />
     <Content Include="Views\QS\searching.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

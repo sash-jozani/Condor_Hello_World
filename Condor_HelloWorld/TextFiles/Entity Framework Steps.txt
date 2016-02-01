@@ -1,0 +1,5 @@
+﻿**** Database first
+
+1 - Create DB
+2 - Create Tables
+3 - Create Data Model

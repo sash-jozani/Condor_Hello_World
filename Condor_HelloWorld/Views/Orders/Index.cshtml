@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Condor_HelloWorld.DataModels.Orders>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Orders</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.insert_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.update_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isProcessed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.insert_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.update_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isProcessed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.userID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
