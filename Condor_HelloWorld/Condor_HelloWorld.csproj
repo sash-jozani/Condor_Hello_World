@@ -133,6 +133,7 @@
     <Compile Include="Controllers\CreateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobBoardController.cs" />
+    <Compile Include="Controllers\QSController.cs" />
     <Compile Include="Controllers\WebDevController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -141,6 +142,7 @@
     <Compile Include="Models\CreateViewModel.cs" />
     <Compile Include="Models\MovieViewModel.cs" />
     <Compile Include="Models\PostJobViewModel.cs" />
+    <Compile Include="Models\QSViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -260,6 +262,8 @@
     <Content Include="Views\Create\Create.cshtml" />
     <Content Include="Views\Create\logIn.cshtml" />
     <Content Include="Views\Create\sucess.cshtml" />
+    <Content Include="Views\QS\Index.cshtml" />
+    <Content Include="Views\QS\searching.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

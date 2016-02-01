@@ -1,0 +1,12 @@
+﻿@model Condor_HelloWorld.Models.QSViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Search kon binim</h2>
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.TextBoxFor(x => x.shitYouSearched, new { @class = "form-control text-center" })
+    <input type="submit" name="qssearch" value="Begin Search" />
+}
